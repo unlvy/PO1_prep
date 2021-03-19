@@ -1,21 +1,3 @@
-/* Proszę dopisać kod, dodać nowe pliki, tak aby program się wykonywał
-   a wynik jego działania był taki sam, jak podany na końcu tego pliku.
-
- * Zdefiniuj klasę Fraction reprezentujacą ułamek zwykły.
-   posiadającą dwa pola prywatne _l i_m typu int.
-
- * Zdefiniuj niezbędne konstruktory i metody pomocnicze (w ramach oszczędności czasu, zaimplementuj je w pliku nagłówkowym)
-   Ułamek jest upraszczany na etapie konstruktora (zdefiniuj funkcję simplify) oraz po każdej operacji dodawania lub mnozenia.
-   W ramach uproszczenia, w komentarzu umieszczono kod funkcji nwd,
-   służacej do wyliczenia największego wspólnego dzielnika.
-   
- * Zaimplementuj operatory dodawania +, mnożenia *
-   (również w wersji liczba * ułamek), operator +=
-   operator przypisania =, operator logiczny >, operator liczby przeciwnej -, ostream << oraz konwersję do double i operator[] służący do wypisania odpowiednio licznika i mianownika.
-   Operatory, które mogą być metodami klasy, zaimplementuj w klasie, pozostałe jako funkcje zewnętrzne.
-  
-*/
-
 #include "fraction.h"
 #include <iostream>
 
