@@ -1,34 +1,3 @@
-/*
-
- * Tematem zadanie jest napisanie rodziny klas funkcji jednoargumentowych i operatorow dzialajacych na nich.
-
- *
-
- * Funkcji jednoargumentowych uzywaja operatory  pozwalajace na:
-
- * - ProstaRozniczka: numeryczne oblicznie wartosci pochodnej w punkcie.
-
- Wzor: f' = (f(x + h) - f(x - h)) / 2h gdzie h jest "krokiem" zadanym podczas konstrukcji.
-
- * - FZlozona: oblicznie wartosc f. zlozonej  a( b (x) ). Przy czym f. a jest zadana w konstruktorze a f. b podobnie jak w PreostaRozniczka.
-
-
- * UWAGA: W komentarzach zadane sa zadania do rozwiniecia w domu.
-
- * UWAGA: Skladnie wywolania operatora zrobiono specjalnie tak aby "brzmiala"  jak zapis matematyczny.
-
- *
-
- * UWAGA: W przypadku gdy mamy kilka hierarchii wspolpracujacych ze soba, uzywamy tylko i wylacznie interfejsow (klas bazowych). To jest wazna uwaga.
-
- *
-
- * Kompilowac do ftest z opcjami -Wall -g
-
- */
-
-
-
 #include <iostream>
 
 #include "Fun.h"
