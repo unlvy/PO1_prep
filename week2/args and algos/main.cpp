@@ -1,15 +1,3 @@
-/*
- * W zadaniu nalezy napisac zestaw klas polaczonych w hierarchie (dziedziczacych po sobie)
- * Klasy te wspolpracuja ze soba jak w przykladowym kodzie.
- *
- * UWAGA: Prosze sie przygladnac dokladnie przykladom uzycia zanim napisze sie deklaracje metod. 
- *        Albo lepiej! Prosze sie zastanowic dwa razy nad poprawnoscia const dla kazdej metody i kazdego argumentu.
- *
- * UWAGA: Obiekty alokowane sa dynamicznie (on heap). Prosze zadbac o to zeby dealokacja przebiegla poprawnie.
- * UWAGA: Implementacje algorytmow sa na tyle proste ze mozna je umiecisc w naglowkach. 
- *        Implementacje i deklaracje klasy Argumenty nalezy rozdzielic na plik zrodlowy i naglowkowy.
- */
-
 #include <iostream>
 #include "Suma.h"
 #include "Pierwiastek.h"
@@ -17,10 +5,8 @@
 
 int main() {
 
-  Argumenty a( 4 ); // 4 liczby
-  a( 0, 2.5 )( 1, 4 )( 3, 8 )( 2, 9 ); // zadane jako pary: (indeks, wartosc), tu podanie nie w kolejosci
-  // w domu prosze zobic taki trick zeby mozna bylo zainicjalizowac "a" w ten sposob:
-  // Argumenty a{{0, 2.5}, {1,4},..itd..};
+  Argumenty a( 4 );
+  a( 0, 2.5 )( 1, 4 )( 3, 8 )( 2, 9 );
   a.print( "Wartosci wejsciowe:" );
 
   Algo *s = new Suma();
@@ -32,7 +18,7 @@ int main() {
   p->wykonaj( s->wykonaj( a ) ).print( "Pierwiastek sumy:" );
   
   Algo* z = s->sklonuj( );
-  const Pierwiastek* b = p->sklonuj( ); // tu prosze sobie przypomniec o wariantnosci metod wirtualnych
+  const Pierwiastek* b = p->sklonuj( ); 
 
   z->wykonaj( z->wykonaj( const_cast<const Argumenty&>( a ) ) ).print( "Powtorka: " );
   b->wykonaj( s->wykonaj( a ) ).print( "Powtorka: ", std::cout );
@@ -41,13 +27,6 @@ int main() {
   delete p;
   delete z;
   delete b;
-  // Do zastanowienia/wyszukania w domu:
-  // W zadaniu zamiast wskaznikow mozna by uzyc referencji
-  // Algo& s = Suma( ); itd...
-  // Wydawac by sie moglo ze juz powyzsza linia zadziala zle
-  //    bo tymczasowy obiekt Suma( ) znika z zakresu
-  //    ( inaczej, w jakis sposob na stosie zarzadzana jest pamiec dla niego? ) i s jest referencja niekreslona.
-  // A jedank tak nie jest. Dlaczego? Prosze poszukac w dokumentacji jezyka.
 }
 /* wynik
 Wartosci wejsciowe: 2.5 4 9 8 
