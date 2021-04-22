@@ -8,7 +8,11 @@ std::ostream& operator<< (std::ostream& os, const FileSystemBase& f) {
 FileSystemBase::FileSystemBase(std::string name, std::string type) : m_name(name), m_type(type) {}
 
 FileSystemBase::~FileSystemBase() {
+    if (m_type == "DIR") {
+        std::cout << "Deleting " << "Dir: " << m_name << std::endl;
+    }
     for (auto* subElement : m_subElements) {
+        std::cout << "About to delete " << subElement->getName() << std::endl;
         delete subElement;
     }
 }
